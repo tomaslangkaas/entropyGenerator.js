@@ -1,7 +1,7 @@
 var entropy = (function() {
   
   entropy.version = '0.1.0';
-  entropy(64); // initial pool size
+  entropy(64); // initial buffer
   
   function generateEntropy() {
     var count, timeLimit;
@@ -11,7 +11,7 @@ var entropy = (function() {
       targetSize = requests[0] || bufferSize;
     }
     if (currentSize < targetSize) {
-      queueExection(generateEntropy);
+      queueExecution(generateEntropy);
       count = 0;
       timeLimit = +new Date + 1;
       while (timeLimit > +new Date) {
@@ -28,7 +28,7 @@ var entropy = (function() {
     currentSize = 0,
     sampleValues = [],
     requests = [],
-    queueExection = setTimeout,
+    queueExecution = setTimeout,
     timers = 0;
 
   function entropy(samples, callback) {
@@ -39,7 +39,7 @@ var entropy = (function() {
       targetSize = bufferSize = samples || 0;
     }
     while (timers < 20) {
-      queueExection(generateEntropy);
+      queueExecution(generateEntropy);
       timers++;
     }
   }
