@@ -3,7 +3,7 @@ Experimental JavaScript entropy generator
 
 ## What is this?
 
-This is a small library (355 bytes minified) to generate entropy (unpredictable values) from JavaScript timing imprecision in any EcmaScript3 runtime. This can be used as an entropy source to seed random number generators to produce unbiased random bits&mdash;the bits of the entropy values are likely biased and thus unsuitable for direct use.
+This is a small library (355 bytes minified) to generate entropy (unpredictable values) from JavaScript timing imprecision in any EcmaScript3 runtime. These values can be used as entropy to seed random number generators to produce unbiased random bits&mdash;the bits of the actual entropy values are likely biased and thus unsuitable for direct use.
 
 The generator does not depend on any user interaction (such as mouse or keyboard events), and generally produce entropy at a faster rate than these. On slow and old hardware (tested on an Intel atom processor), rough estimates indicate a lower bound of about 250 bits of entropy per second. On current hardware (i5), rough estimates indicate a lower bound of about 7000 bits of entropy per second.
 
