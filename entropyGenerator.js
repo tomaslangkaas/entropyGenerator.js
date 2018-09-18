@@ -1,7 +1,7 @@
 var entropy = (function() {
   
   entropy.version = '0.1.0';
-  entropy(64); // initial buffer
+  entropy(64); // initial pool size
   
   function generateEntropy() {
     var count, timeLimit;
