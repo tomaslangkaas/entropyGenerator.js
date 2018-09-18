@@ -9,11 +9,13 @@ The generator does not depend on any user interaction (such as mouse or keyboard
 
 ## How to use
 
+The library contains a single function, `entropy()`. To get entropy values, call the function with two arguments; the number of values and a callback function to receive the results. The library has an internal pool of pre-generated entropy values to serve requests faster. The size of this pool can be set by calling the `entropy()` function with a single argument; the new size of the pool.
+
 ```javascript
 // generate 12 unpredictable values
 
 entropy(12, function(values){console.log(values)});
->  [301, 1307, 35, 825, 796, 1842, 2748, 1327, 2433, 807, 1146, 2182]
+> [301, 1307, 35, 825, 796, 1842, 2748, 1327, 2433, 807, 1146, 2182]
 
 // generate 12 more
 
